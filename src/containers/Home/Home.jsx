@@ -18,7 +18,7 @@ class Home extends React.Component {
     render(){
         return (
             <div>
-                <p>Interaksi dengan Back-End, Pemanggilan API (GET)</p>
+                <p>Interaksi dengan Back-End, Pemanggilan API (GET) Menggunakan json-server --watch db.json --port 3004</p>
                 <hr />
                 <BlogPost/>
                 <p>LifeCycle Component</p>
