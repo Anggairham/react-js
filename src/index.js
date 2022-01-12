@@ -6,8 +6,21 @@ import reportWebVitals from './reportWebVitals';
 // import HelloComponent from './components/HelloComponent';
 // import StateFullComponent from './containers/StateFullComponent';
 import Home from './containers/Home/Home';
+// import redux from 'redux';
 
+// const createStore = redux.createStore;
 
+// const globalState = {
+//   totalOrder: 0
+// }
+
+// // Reducer
+// const rootReducer = (state = globalState,action)=>{
+//   return state;
+// }
+
+// // Store
+// const store = createStore(rootReducer);
 
 ReactDOM.render(
   <React.StrictMode>
