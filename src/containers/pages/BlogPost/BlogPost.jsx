@@ -1,7 +1,8 @@
 import React, {Component, Fragment} from 'react';
-import Post from '../../components/Post/Post';
+import Post from '../../../components/Post/Post';
 import './BlogPost.css';
 import axios from 'axios';
+import { useNavigate } from "react-router-dom";
 
 class BlogPost extends Component {
     state = {
@@ -101,9 +102,18 @@ class BlogPost extends Component {
             this.postDataToApi();
         }
     }
+
+    handelDetail = (id) => {
+        this.props.history.push(``)
+        // let navigate = useNavigate();
+        // navigate(`/detail-post/${id}`)
+    }
+
     render(){
         return (
             <Fragment>
+                <p>Interaksi dengan Back-End, Pemanggilan API (GET),(DELETE,(POST),(PUT) Menggunakan json-server --watch db.json --port 3004</p>
+                <hr />
                 <p className='section-title'>Blog Post</p>
                 <div className='form-add-post'>
                     <label htmlFor="title">Title</label>
@@ -114,7 +124,7 @@ class BlogPost extends Component {
                 </div>
                 {
                     this.state.post.map(post => {
-                        return <Post key={post.id} data={post} remove={this.handleRemove} update={this.handleUpdate}/>;
+                        return <Post key={post.id} data={post} remove={this.handleRemove} update={this.handleUpdate} goDetail={this.handelDetail}/>;
                     })
                 }
             </Fragment>

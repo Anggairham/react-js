@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import {Outlet} from "react-router-dom";
 
 class LifeCycleComp extends Component {
     /* LIFECYCLE Function */
@@ -59,7 +60,12 @@ class LifeCycleComp extends Component {
     render(){
         console.log('render')
         return (
-            <button className='button' onClick={this.changeCount}>Button {this.state.count}</button>
+            <div>
+                <p>LifeCycle Component</p>
+                <hr />
+                <button className='button' onClick={this.changeCount}>Button {this.state.count}</button>
+                <Outlet/>
+            </div>
         )
     }
 }

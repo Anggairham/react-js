@@ -1,76 +1,56 @@
 import React from 'react';
-import YoutubeComp from '../../components/YoutubeComp/YoutubeComp';
-import Product from '../Product/Product';
-import LifeCycleComp from '../LifeCycleComp/LifeCycleComp';
-import BlogPost from '../BlogPost/BlogPost';
+import Product from '../pages/Product/Product';
+
+// Pages
+import LifeCycleComp from '../pages/LifeCycleComp/LifeCycleComp';
+import BlogPost from '../pages/BlogPost/BlogPost';
 import {BrowserRouter,Routes,Route,Link} from "react-router-dom";
+import YoutubeCompPage from '../pages/YoutubeCompPage/YoutubeCompPage';
+import DetailPost from '../pages/BlogPost/DetailPost/DetailPost';
 
 class Home extends React.Component {
     state = {
-        showComponent :true
+        showComponent :true,
+        alertMessage:'LifeCycleComp dibawah akan hilang dalam 10 detik'
     }
     componentDidMount(){
-        // setTimeout(()=>{
-        //     this.setState({
-        //         showComponent:false
-        //     })
-        // },5000)
+        setTimeout(()=>{
+            this.setState({
+                showComponent:false,
+                alertMessage: 'LifeCycleComp telah hilang/componentWillUnmount'
+            })
+        },10000)
     }
     render(){
         return (
             <BrowserRouter>
-            {/* <div>
-                <p>Interaksi dengan Back-End, Pemanggilan API (GET),(DELETE,(POST),(PUT) Menggunakan json-server --watch db.json --port 3004</p>
-                <hr />
-                <BlogPost/>
-                <p>LifeCycle Component</p>
+            <div>
+                <p>{this.state.alertMessage}</p>
                 <hr />
                 {
                     this.state.showComponent === true ? 
                     <LifeCycleComp/>:null
                 }
-                <p>Update Parent State Melalui Child Component</p>
-                <hr />
-                <Product/>
-                <p>Dynamic Component </p>
-                <hr />
-                <YoutubeComp 
-                    time="7.02"
-                    title="Belajar React JS 1"
-                    desc="25,110 views, two days ago"
-                />
-                <YoutubeComp 
-                    time="8.05"
-                    title="Belajar React JS 1"
-                    desc="25,110 views, two days ago"
-                />
-                <YoutubeComp 
-                    time="12.10"
-                    title="Belajar React JS 1"
-                    desc="25,110 views, two days ago"
-                />
-                <YoutubeComp 
-                    time="2.30"
-                    title="Belajar React JS 1"
-                    desc="25,110 views, two days ago"
-                />
-                <YoutubeComp/>
-            </div> */}
+            </div>
             <div>
-                <p>Ini adalah Component</p>
+                <p>Home adalah Component Global</p>
                 <hr />
-                <h1>Home</h1>
+                <h1>react-router-dom</h1>
                 <nav>
                     <Link to="/">Home</Link> |{" "}
-                    <Link to="product">product</Link> |{" "}
+                    <Link to="lifecycle/product">product</Link> |{" "}
                     <Link to="youtubecomp">youtubecomp</Link> |{" "}
                     <Link to="lifecycle">lifecycle</Link>
                 </nav>
             </div>
                 <Routes>
                     <Route path="/" element={<BlogPost/>}/>
-                    <Route path="product" element={<Product/>}/>
-                    <Route path="lifecycle" element={<LifeCycleComp/>}/>
+                    <Route path="/detail-post/:od" element={<DetailPost/>}/>
+                    <Route path="/youtubecomp" element={<YoutubeCompPage/>}/>
+                    {/* Nester Route, Gunakan outlet gara lifecycle tetap muncul pada route lifecycle/product */}
+                    <Route path="lifecycle" element={<LifeCycleComp/>}>
+                        <Route path="product" element={<Product/>}/>
+                    </Route>
                 </Routes>
             </BrowserRouter>
         )

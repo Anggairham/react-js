@@ -5,14 +5,14 @@
     margin-right: 12px;
 }
 
-.img-thumb {
+.img-thumb-youtube {
     width: 100%;
     height: 118px;
     overflow: hidden;
     position: relative;
 }
 
-.img-thumb img {
+.img-thumb-youtube img {
     width: 100%;
 }
 

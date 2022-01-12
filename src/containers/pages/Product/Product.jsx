@@ -1,5 +1,5 @@
 import React,{Component, Fragment} from 'react';
-import CardProduct from '../CardProduct/CardProduct';
+import CardProduct from './CardProduct/CardProduct';
 import './Product.css'
 /* Update Parent State Melalui Child Component */
 class Product extends Component {
@@ -14,6 +14,8 @@ class Product extends Component {
     render(){
         return (
             <Fragment>
+                <p>Update Parent State Melalui Child Component</p>
+                <hr />
                 <div className='header'>
                     <div className='logo'>
                         <img src="" alt="" />
