@@ -3,6 +3,7 @@ import YoutubeComp from '../../components/YoutubeComp/YoutubeComp';
 import Product from '../Product/Product';
 import LifeCycleComp from '../LifeCycleComp/LifeCycleComp';
 import BlogPost from '../BlogPost/BlogPost';
+import {BrowserRouter,Routes,Route,Link} from "react-router-dom";
 
 class Home extends React.Component {
     state = {
@@ -17,8 +18,9 @@ class Home extends React.Component {
     }
     render(){
         return (
-            <div>
-                <p>Interaksi dengan Back-End, Pemanggilan API (GET) Menggunakan json-server --watch db.json --port 3004</p>
+            <BrowserRouter>
+            {/* <div>
+                <p>Interaksi dengan Back-End, Pemanggilan API (GET),(DELETE,(POST),(PUT) Menggunakan json-server --watch db.json --port 3004</p>
                 <hr />
                 <BlogPost/>
                 <p>LifeCycle Component</p>
@@ -53,7 +55,24 @@ class Home extends React.Component {
                     desc="25,110 views, two days ago"
                 />
                 <YoutubeComp/>
+            </div> */}
+            <div>
+                <p>Ini adalah Component</p>
+                <hr />
+                <h1>Home</h1>
+                <nav>
+                    <Link to="/">Home</Link> |{" "}
+                    <Link to="product">product</Link> |{" "}
+                    <Link to="youtubecomp">youtubecomp</Link> |{" "}
+                    <Link to="lifecycle">lifecycle</Link>
+                </nav>
             </div>
+                <Routes>
+                    <Route path="/" element={<BlogPost/>}/>
+                    <Route path="product" element={<Product/>}/>
+                    <Route path="lifecycle" element={<LifeCycleComp/>}/>
+                </Routes>
+            </BrowserRouter>
         )
     }
 }

@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+// import App from './App';
 import reportWebVitals from './reportWebVitals';
-import HelloComponent from './components/HelloComponent';
-import StateFullComponent from './containers/StateFullComponent';
+// import HelloComponent from './components/HelloComponent';
+// import StateFullComponent from './containers/StateFullComponent';
 import Home from './containers/Home/Home';
 
 
