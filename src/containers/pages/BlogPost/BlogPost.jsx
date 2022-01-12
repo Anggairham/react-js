@@ -2,7 +2,6 @@ import React, {Component, Fragment} from 'react';
 import Post from '../../../components/Post/Post';
 import './BlogPost.css';
 import axios from 'axios';
-import { useNavigate } from "react-router-dom";
 
 class BlogPost extends Component {
     state = {
@@ -87,7 +86,6 @@ class BlogPost extends Component {
             formBlogPostNew['id'] = timestamp;
         }
         formBlogPostNew[event.target.name] = event.target.value;
-        let title = event.target.value
         this.setState({
             formBlogPost: formBlogPostNew
         },() => {
@@ -101,12 +99,6 @@ class BlogPost extends Component {
         }else{
             this.postDataToApi();
         }
-    }
-
-    handelDetail = (id) => {
-        this.props.history.push(``)
-        // let navigate = useNavigate();
-        // navigate(`/detail-post/${id}`)
     }
 
     render(){
@@ -124,7 +116,7 @@ class BlogPost extends Component {
                 </div>
                 {
                     this.state.post.map(post => {
-                        return <Post key={post.id} data={post} remove={this.handleRemove} update={this.handleUpdate} goDetail={this.handelDetail}/>;
+                        return <Post key={post.id} data={post} remove={this.handleRemove} update={this.handleUpdate}/>;
                     })
                 }
             </Fragment>

@@ -45,7 +45,7 @@ class Home extends React.Component {
             </div>
                 <Routes>
                     <Route path="/" element={<BlogPost/>}/>
-                    <Route path="/detail-post/:od" element={<DetailPost/>}/>
+                    <Route path="/detail-post/:id" element={<DetailPost/>}/>
                     <Route path="/youtubecomp" element={<YoutubeCompPage/>}/>
                     {/* Nester Route, Gunakan outlet gara lifecycle tetap muncul pada route lifecycle/product */}
                     <Route path="lifecycle" element={<LifeCycleComp/>}>
