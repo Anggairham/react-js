@@ -1,6 +1,7 @@
 import React from 'react';
 import Product from '../pages/Product/Product';
 import ProductGlobalState from '../pages/ProductGlobalState/Product';
+import Hooks from '../pages/Hooks/Hooks';
 
 // Pages
 import LifeCycleComp from '../pages/LifeCycleComp/LifeCycleComp';
@@ -42,7 +43,8 @@ class Home extends React.Component {
                     <Link to="lifecycle">lifecycle</Link> |{" "}
                     <Link to="lifecycle/product">Product State Local</Link> |{" "}
                     <Link to="youtubecomp">youtubecomp</Link> |{" "}
-                    <Link to="product-global-state">Product Global State</Link> |{" "}
+                    <Link to="product-global-state">Product Redux</Link> |{" "}
+                    <Link to="hooks">Hooks</Link> |{" "}
                 </nav>
             </div>
                 <Routes>
@@ -50,6 +52,7 @@ class Home extends React.Component {
                     <Route path="/detail-post/:id" element={<DetailPost/>}/>
                     <Route path="/youtubecomp" element={<YoutubeCompPage/>}/>
                     <Route path="/product-global-state" element={<ProductGlobalState/>}/>
+                    <Route path="/hooks" element={<Hooks/>}/>
                     {/* Nester Route, Gunakan outlet gara lifecycle tetap muncul pada route lifecycle/product */}
                     <Route path="lifecycle" element={<LifeCycleComp/>}>
                         <Route path="product" element={<Product/>}/>

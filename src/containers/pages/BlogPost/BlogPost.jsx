@@ -2,6 +2,7 @@ import React, {Component, Fragment} from 'react';
 import Post from '../../../components/Post/Post';
 import './BlogPost.css';
 import axios from 'axios';
+import API from '../../../services';
 
 class BlogPost extends Component {
     state = {
@@ -14,7 +15,7 @@ class BlogPost extends Component {
         isUpdate: false
     }
     getPostApi = () => {
-        axios.get('http://localhost:3004/posts?_sort=id&_order=desc').then((response)=>{
+        API.getNewsBlog().then(response=>{
             this.setState({
                 post: response.data
             })
@@ -22,7 +23,7 @@ class BlogPost extends Component {
     }
 
     postDataToApi = () => {
-        axios.post('http://localhost:3004/posts',this.state.formBlogPost).then((response)=>{
+        API.postNewsBlog(this.state.formBlogPost).then(response=>{
             console.log(response)
             alert('data berhasil disimpan')
             this.getPostApi()
@@ -33,7 +34,7 @@ class BlogPost extends Component {
                     body:'',
                 }
             })
-        }, (err)=>{
+        },(err)=>{
             console.log(err)
             alert(err)
         })
