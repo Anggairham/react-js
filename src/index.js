@@ -7,7 +7,8 @@ import reportWebVitals from './reportWebVitals';
 // import StateFullComponent from './containers/StateFullComponent';
 import Home from './containers/Home/Home';
 // import redux from 'redux';
-
+import {Provider} from "react-redux";
+import store from "./redux/store";
 // const createStore = redux.createStore;
 
 // const globalState = {
@@ -24,7 +25,9 @@ import Home from './containers/Home/Home';
 
 ReactDOM.render(
   <React.StrictMode>
+    <Provider store={store}>
     <Home />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

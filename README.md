@@ -3,6 +3,8 @@ https://www.youtube.com/playlist?list=PLU4DS8KR-LJ03qEsHn9zV4qdhcWtusBqb
 
 https://reactrouter.com/docs/en/v6/faq react-router-dom@6 sudah tidak ada WithRouter buka halaman tersebut
 
+https://www.buildwithangga.com/tips/mulai-menggunakan-redux-pada-reactjs
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
