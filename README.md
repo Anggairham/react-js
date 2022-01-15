@@ -5,6 +5,8 @@ https://reactrouter.com/docs/en/v6/faq react-router-dom@6 sudah tidak ada WithRo
 
 https://www.buildwithangga.com/tips/mulai-menggunakan-redux-pada-reactjs
 
+https://medium.com/@gobindathakur/using-reactjs-hoc-pattern-be-aware-of-the-side-effects-f52beae77703
+
 # deployment to github
 https://dev.to/yuribenjamin/how-to-deploy-react-app-in-github-pages-2a1f
 
