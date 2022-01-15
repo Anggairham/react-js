@@ -3,7 +3,7 @@
 
 import axios from 'axios';
 
-const RootPath = 'http://localhost:3004'
+const RootPath = (process.env.NODE_ENV === 'development' || !process.env.NODE_ENV) ? 'http://localhost:3004' : 'https://jsonplaceholder.typicode.com';
 const Get = (path) => {
     const promise = new Promise((resolve,reject)=>{
         axios.get(`${RootPath}/${path}`).then((response)=>{

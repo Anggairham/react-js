@@ -5,6 +5,14 @@ https://reactrouter.com/docs/en/v6/faq react-router-dom@6 sudah tidak ada WithRo
 
 https://www.buildwithangga.com/tips/mulai-menggunakan-redux-pada-reactjs
 
+# deployment to github
+https://dev.to/yuribenjamin/how-to-deploy-react-app-in-github-pages-2a1f
+
+Before deploy 
+https://scottvinkle.me/blogs/work/how-to-deploy-a-react-app-to-a-subdirectory
+
+setting up the homepage if app is not hosted at the server root https://create-react-app.dev/docs/deployment/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

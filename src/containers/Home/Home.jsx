@@ -24,8 +24,9 @@ class Home extends React.Component {
         },10000)
     }
     render(){
+        console.log(process.env)
         return (
-            <BrowserRouter>
+            <BrowserRouter basename={(process.env.NODE_ENV === 'development' || !process.env.NODE_ENV) ? '' : ''}>
             <div>
                 <p>{this.state.alertMessage}</p>
                 <hr />
@@ -39,23 +40,23 @@ class Home extends React.Component {
                 <hr />
                 <h1>react-router-dom</h1>
                 <nav>
-                    <Link to="/">Home</Link> |{" "}
-                    <Link to="lifecycle">lifecycle</Link> |{" "}
-                    <Link to="lifecycle/product">Product State Local</Link> |{" "}
-                    <Link to="youtubecomp">youtubecomp</Link> |{" "}
-                    <Link to="product-global-state">Product Redux</Link> |{" "}
-                    <Link to="hooks">Hooks</Link> |{" "}
+                    <Link to={`${process.env.PUBLIC_URL}/`}>Home</Link> |{' '}
+                    <Link to={`${process.env.PUBLIC_URL}/lifecycle`}>lifecycle</Link> |{' '}
+                    <Link to={`${process.env.PUBLIC_URL}/lifecycle/product`}>Product State Local</Link> |{' '}
+                    <Link to={`${process.env.PUBLIC_URL}/youtubecomp`}>youtubecomp</Link> |{' '}
+                    <Link to={`${process.env.PUBLIC_URL}/product-global-state`}>Product Redux</Link> |{' '}
+                    <Link to={`${process.env.PUBLIC_URL}/hooks`}>Hooks</Link> |{' '}
                 </nav>
             </div>
                 <Routes>
-                    <Route path="/" element={<BlogPost/>}/>
-                    <Route path="/detail-post/:id" element={<DetailPost/>}/>
-                    <Route path="/youtubecomp" element={<YoutubeCompPage/>}/>
-                    <Route path="/product-global-state" element={<ProductGlobalState/>}/>
-                    <Route path="/hooks" element={<Hooks/>}/>
+                    <Route path={`${process.env.PUBLIC_URL}/`} element={<BlogPost/>}/>
+                    <Route path={`${process.env.PUBLIC_URL}/detail-post/:id`} element={<DetailPost/>}/>
+                    <Route path={`${process.env.PUBLIC_URL}/youtubecomp`} element={<YoutubeCompPage/>}/>
+                    <Route path={`${process.env.PUBLIC_URL}/product-global-state`} element={<ProductGlobalState/>}/>
+                    <Route path={`${process.env.PUBLIC_URL}/hooks`} element={<Hooks/>}/>
                     {/* Nester Route, Gunakan outlet gara lifecycle tetap muncul pada route lifecycle/product */}
-                    <Route path="lifecycle" element={<LifeCycleComp/>}>
-                        <Route path="product" element={<Product/>}/>
+                    <Route path={`${process.env.PUBLIC_URL}/lifecycle`} element={<LifeCycleComp/>}>
+                        <Route path='product' element={<Product/>}/>
                     </Route>
                 </Routes>
             </BrowserRouter>
