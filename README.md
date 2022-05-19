@@ -8,10 +8,11 @@ https://www.buildwithangga.com/tips/mulai-menggunakan-redux-pada-reactjs
 https://medium.com/@gobindathakur/using-reactjs-hoc-pattern-be-aware-of-the-side-effects-f52beae77703
 
 # deployment to github
-https://dev.to/yuribenjamin/how-to-deploy-react-app-in-github-pages-2a1f
+* git remote add origin
+* https://dev.to/yuribenjamin/how-to-deploy-react-app-in-github-pages-2a1f
 
-Before deploy 
-https://scottvinkle.me/blogs/work/how-to-deploy-a-react-app-to-a-subdirectory
+* Before deploy 
+* https://scottvinkle.me/blogs/work/how-to-deploy-a-react-app-to-a-subdirectory
 
 setting up the homepage if app is not hosted at the server root https://create-react-app.dev/docs/deployment/
 
