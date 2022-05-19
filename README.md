@@ -10,7 +10,7 @@ https://medium.com/@gobindathakur/using-reactjs-hoc-pattern-be-aware-of-the-side
 # deployment to github
 * git remote add origin
 * https://dev.to/yuribenjamin/how-to-deploy-react-app-in-github-pages-2a1f
-
+* npm run deploy
 * Before deploy 
 * https://scottvinkle.me/blogs/work/how-to-deploy-a-react-app-to-a-subdirectory
 
